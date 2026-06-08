@@ -44,3 +44,8 @@ class Student:
         print(self.name.upper())
         for grade in self.gradebook:
             print(grade, "/", 100, "--", self.calculate_letter_grade(grade))
+
+    def write_grade_report(self, file):
+        file.write(self.name.upper() + "\n")
+        for grade in self.gradebook:
+            file.write(str(grade) + " / " + "100 -- " + self.calculate_letter_grade(grade) + "\n")
